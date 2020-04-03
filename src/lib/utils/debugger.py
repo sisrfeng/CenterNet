@@ -45,6 +45,8 @@ class Debugger(object):
       self.names = coco_class_name
     elif num_classes == 20 or dataset == 'pascal':
       self.names = pascal_class_name
+    elif num_classes == 1 or dataset == 'aic':
+      self.names = aic_class_name
     elif dataset == 'gta':
       self.names = gta_class_name
       self.focal_length = 935.3074360871937
@@ -430,6 +432,10 @@ class Debugger(object):
 
 kitti_class_name = [
   'p', 'v', 'b'
+]
+
+kitti_class_name = [
+  'vehicle
 ]
 
 gta_class_name = [
