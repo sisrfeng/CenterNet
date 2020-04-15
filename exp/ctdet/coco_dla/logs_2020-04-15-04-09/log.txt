@@ -1,3 +1,0 @@
-2020-04-15-04-12: epoch: 1 |loss 3.384172 | hm_loss 2.608820 | wh_loss 4.938167 | off_loss 0.281536 | time 2.566667 | 
-2020-04-15-04-13: epoch: 2 |loss 2.325738 | hm_loss 1.783065 | wh_loss 2.785753 | off_loss 0.264097 | time 1.716667 | 
-2020-04-15-04-15: epoch: 3 |loss 1.855435 | hm_loss 1.385954 | wh_loss 2.120751 | off_loss 0.257405 | time 1.700000 | 
