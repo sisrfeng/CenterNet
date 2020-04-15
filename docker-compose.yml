@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  clwf:
+    image: clwf
+    build:
+      context: .
+      dockerfile: Dockerfile

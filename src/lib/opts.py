@@ -25,7 +25,7 @@ class opts(object):
     self.parser.add_argument('--demo', default='', 
                              help='path to image/ image folders/ video. '
                                   'or "webcam"')
-    self.parser.add_argument('--load_model', default='',
+    self.parser.add_argument('--load_model', default='/root/c/exp/ctdet/coco_dla/model_best.pth',
                              help='path to pretrained model')
     self.parser.add_argument('--resume', action='store_true',
                              help='resume an experiment. '
@@ -330,14 +330,14 @@ class opts(object):
         opt.heads.update({'hp_offset': 2})
     else:
       assert 0, 'task not defined!'
-    print('heads', opt.heads)
+    # print('heads', opt.heads)
     return opt
 
   def init(self, args=''):
     #resolution要该？有resize? mean和std
     default_dataset_info = {
       'ctdet': {'default_resolution': [512, 512], 'num_classes': 1, 
-                'mean': [0.408, 0.447, 0.470], 'std': [0.289, 0.274, 0.278],
+                'mean': [0.586388424794489, 0.5913551401576657, 0.6016470942414277], 'std': [0.17724996469020474, 0.17710440487044907, 0.17422022028988235],
                 'dataset': 'aic'},
       'exdet': {'default_resolution': [512, 512], 'num_classes': 80, 
                 'mean': [0.408, 0.447, 0.470], 'std': [0.289, 0.274, 0.278],

@@ -434,8 +434,8 @@ kitti_class_name = [
   'p', 'v', 'b'
 ]
 
-kitti_class_name = [
-  'vehicle
+aic_class_name = [
+  'car'
 ]
 
 gta_class_name = [

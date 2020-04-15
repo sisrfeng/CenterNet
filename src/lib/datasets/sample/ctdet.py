@@ -33,7 +33,7 @@ class CTDetDataset(data.Dataset):
     ann_ids = self.coco.getAnnIds(imgIds=[img_id])
     anns = self.coco.loadAnns(ids=ann_ids)
     num_objs = min(len(anns), self.max_objs)
-
+    # print(img_path)
     img = cv2.imread(img_path)
 
     height, width = img.shape[0], img.shape[1]
@@ -99,6 +99,8 @@ class CTDetDataset(data.Dataset):
     for k in range(num_objs):
       ann = anns[k]
       bbox = self._coco_box_to_bbox(ann['bbox'])
+      # print('self.cat_ids: ',self.cat_ids)
+      # print('ann[category_id]: ',ann['category_id'])
       cls_id = int(self.cat_ids[ann['category_id']])
       if flipped:
         bbox[[0, 2]] = width - bbox[[2, 0]] - 1
@@ -114,6 +116,10 @@ class CTDetDataset(data.Dataset):
         ct = np.array(
           [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2], dtype=np.float32)
         ct_int = ct.astype(np.int32)
+        # print("k  for k in range(num_objs): ", k)
+        # print('np.size(hm) ',np.size(hm))
+        # print('hm[1]: ',hm[1])
+        # print('cls_id, ct_int, radius, hm: ',cls_id, ct_int, radius,hm)
         draw_gaussian(hm[cls_id], ct_int, radius)
         wh[k] = 1. * w, 1. * h
         ind[k] = ct_int[1] * output_w + ct_int[0]

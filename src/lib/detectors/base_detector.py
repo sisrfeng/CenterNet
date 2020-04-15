@@ -137,6 +137,7 @@ class BaseDetector(object):
     tot_time += end_time - start_time
 
     if self.opt.debug >= 1:
+      print('!!!!!!!!!!!')
       self.show_results(debugger, image, results)
     
     return {'results': results, 'tot': tot_time, 'load': load_time,
