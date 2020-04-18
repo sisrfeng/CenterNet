@@ -39,3 +39,5 @@ https://github.com/sisrfeng/CenterNet/blob/7a8be517d950001c6c2acbbac53c23e72b330
 运行demo.py时要在opts.py中改回来，否则提示类别数目不对。
 
 根据这个转数据集 /src/tools/convert_kitti_to_coco.py，后面再转
+
+换用model_zoo的其他模型来跑demo.py，要改 --arch, 否则报错，有相应提示。
