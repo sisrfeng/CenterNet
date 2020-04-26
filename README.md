@@ -44,3 +44,10 @@ https://github.com/sisrfeng/CenterNet/blob/7a8be517d950001c6c2acbbac53c23e72b330
 
 someone's batchsize=47
 The learning rate 5e-4 is set for batchsize 128, you will need to linearly scale it to your batchsize (in your case, 5e-4 * 47 / 128).
+
+
+https://blog.csdn.net/weixin_41765699/article/details/100118353中
+指定
+--master_batch 1 
+加了这个，batch不会平均分配到各个GPU。
+论文作者的readme没加这个
