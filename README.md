@@ -51,3 +51,7 @@ https://blog.csdn.net/weixin_41765699/article/details/100118353中
 --master_batch 1 
 加了这个，batch不会平均分配到各个GPU。
 论文作者的readme没加这个
+
+
+https://github.com/xingyizhou/CenterNet/issues/660
+We WILL predict peaks with very low confidence. This is not punished at all for the AP metric. However I do have tried to set a 0.01 threshold, and the results stayed the same for the specific model I tested.
