@@ -39,17 +39,15 @@ https://github.com/sisrfeng/CenterNet/blob/7a8be517d950001c6c2acbbac53c23e72b330
 
 根据这个转数据集 /src/tools/convert_kitti_to_coco.py，后面再转
 
-换用model_zoo的其他模型来跑demo.py，要改 --arch, 否则报错，有相应提示。
 
-someone's batchsize=47
 The learning rate 5e-4 is set for batchsize 128, you will need to linearly scale it to your batchsize (in your case, 5e-4 * 47 / 128).
 
 
 https://blog.csdn.net/weixin_41765699/article/details/100118353中
 指定
 --master_batch 1 
-加了这个，batch不会平均分配到各个GPU。
-论文作者的readme没加这个
+加了这个，batch就不会平均分配到各个GPU。master GPU要存model的参数，平均分配batchsize不合理
+
 
 
 https://github.com/xingyizhou/CenterNet/issues/660
