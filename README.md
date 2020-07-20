@@ -1,5 +1,4 @@
 https://blog.csdn.net/weixin_42634342/article/details/97756458
-
 opt.py应该是opts.py
 
 “由于图片路径问题，要在test函数里面修改一下数据集图片的绝对路径”,没找到相应代码。
@@ -10,7 +9,7 @@ opt.py应该是opts.py
 https://blog.csdn.net/weixin_41765699/article/details/100118353
 
 super(AIC, self).__init__()
-原来是COCO,改成AIC?    
+原来是COCO,改成AIC?   
 
 一开始被
 https://img-blog.csdnimg.cn/20190828210637735.png
@@ -55,3 +54,6 @@ https://blog.csdn.net/weixin_41765699/article/details/100118353中
 
 https://github.com/xingyizhou/CenterNet/issues/660
 We WILL predict peaks with very low confidence. This is not punished at all for the AP metric. However I do have tried to set a 0.01 threshold, and the results stayed the same for the specific model I tested.
+
+
+如果采用了multi-scale测试，需要使用softnms作为后处理，需要额外编译
