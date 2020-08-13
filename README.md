@@ -54,4 +54,7 @@ https://github.com/xingyizhou/CenterNet/issues/660
 We WILL predict peaks with very low confidence. This is not punished at all for the AP metric. However I do have tried to set a 0.01 threshold, and the results stayed the same for the specific model I tested.
 
 
-如果采用了multi-scale测试，需要使用softnms作为后处理，需要额外编译
+如果采用了multi-scale测试，需要使用softnms作为后处理，需要额外编译   
+
+https://blog.csdn.net/weixin_42634342/article/details/97756458   
+说运行test.py时，不要加上 --keep_res, 但作者给的模型在指定--input_res 512和 --keep_res测试时，测出来的AP都是正常的。感觉这篇博客不太可靠。
