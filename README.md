@@ -57,4 +57,23 @@ We WILL predict peaks with very low confidence. This is not punished at all for 
 如果采用了multi-scale测试，需要使用softnms作为后处理，需要额外编译   
 
 https://blog.csdn.net/weixin_42634342/article/details/97756458   
-说运行test.py时，不要加上 --keep_res, 但作者给的模型在指定--input_res 512和 --keep_res测试时，测出来的AP都是正常的。感觉这篇博客不太可靠。
+说运行test.py时，不要加上 --keep_res, 但作者给的模型在指定--input_res 512和 --keep_res测试时，测出来的AP都是正常的。感觉这篇博客不太可靠。  
+
+
+
+1.关于ctdet_coco_dla_1x.sh和ctdet_coco_dla_2x.sh中提到的训练设置：  
+1x是训练了140个epoch，在90和120个epoch的时候学习率变为原来的十分之一。  
+2x的训练，有两种：
+方法一，是直接训练230个epoch，是在180和210个epoch的时候进行学习率衰减；
+方法二，是在1x训练的基础上进行finetune，即继续原来的训练；
+
+Hi Xingyi Zhou,
+
+thank you for the implementation of the CenterNet algorithm. The idea behind it is amazing.
+Can you please tell me if there is an easy way to use transfer learning from some already trained weights?
+My dataset is very small (only 220 images) and I surely need transfer learning.
+Tried using YOLO-tiny with Darknet and I just needed to extract the weights for the first 15 layers and I was ready to train. What is the equivalence of that in your implementation?  
+
+
+I haven't tried freezing any layers. You can load the COCO pretrained model by --load_model ../models/ctdet_coco_2x.pth when finetuning on your own dataset.
+
