@@ -77,3 +77,6 @@ Tried using YOLO-tiny with Darknet and I just needed to extract the weights for 
 
 I haven't tried freezing any layers. You can load the COCO pretrained model by --load_model ../models/ctdet_coco_2x.pth when finetuning on your own dataset.
 
+    
+从头训练的学习率：should set lr to 1.25e-2 when batch size is 32, and scale up/down linearly according to this reference numbers.  
+https://github.com/xingyizhou/CenterNet/issues/315#issuecomment-526910696
