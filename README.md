@@ -1,3 +1,7 @@
+my batch_size is 8.Does it matter?
+It matters a lot.
+
+
 https://blog.csdn.net/weixin_42634342/article/details/97756458
 opt.py应该是opts.py
 
